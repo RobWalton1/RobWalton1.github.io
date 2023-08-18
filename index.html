@@ -21,16 +21,28 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 2em;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2em;
         }
-        .project {
-            margin-bottom: 2em;
-            padding: 1em;
+        .section-link {
             background-color: #ffffff;
             border: 1px solid #dddddd;
             border-radius: 5px;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1em;
+            text-align: center;
+            transition: transform 0.2s;
         }
-        .project img {
+        .section-link:hover {
+            transform: scale(1.05);
+        }
+        .section-link a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: bold;
+        }
+        .section-link img {
             max-width: 100%;
             height: auto;
         }
@@ -42,27 +54,30 @@
         <p>Data Analyst Portfolio</p>
     </header>
     <div class="container">
-        <div class="project">
-            <h2>Dynamic Power BI Insights Dashboard</h2>
-            <p>In this project, I embarked on a data exploration journey using Power BI to delve into a dataset derived from a questionnaire focused on data analysts and their roles. With a keen interest in understanding the diverse landscape of data analysis, I meticulously cleaned, transformed, and visualized the data to extract meaningful insights. By conducting this analysis, I aimed to shed light on the various facets of data analysts' roles and responsibilities. To download the data and the dashboard, please refer to: <a href="https://github.com/RobWalton1/Dynamic-Power-BI-Insights-Dashboard">GitHub</a></p>
-            <img src="Dashboard.png" alt="PowerBI Screenshot">
+        <div class="section-link">
+            <a href="powerbi.html">
+                <h2>Power BI</h2>
+                <img src="powerbi-icon.png" alt="Power BI Icon">
+            </a>
         </div>
-        <div class="project">
-            <h2>Excel Data Cleansing & Interactive Insights</h2>
-            <p>Project description goes here...</p>
-            <img src="ExcelDashboard.png" alt="Project 2 Screenshot">
+        <div class="section-link">
+            <a href="excel.html">
+                <h2>Excel</h2>
+                <img src="excel-icon.png" alt="Excel Icon">
+            </a>
         </div>
-        <div class="project">
-            <h2>Python Chatbot</h2>
-            <p>Project description goes here...</p>
-            <img src="project2-screenshot.png" alt="Project 2 Screenshot">
+        <div class="section-link">
+            <a href="python.html">
+                <h2>Python</h2>
+                <img src="python-icon.png" alt="Python Icon">
+            </a>
         </div>
-        <div class="project">
-            <h2>Inventory management</h2>
-            <p>Project description goes here...</p>
-            <img src="project2-screenshot.png" alt="Project 2 Screenshot">
+        <div class="section-link">
+            <a href="sql.html">
+                <h2>SQL</h2>
+                <img src="sql-icon.png" alt="SQL Icon">
+            </a>
         </div>
-        <!-- Add more project sections as needed -->
     </div>
 </body>
 </html>
