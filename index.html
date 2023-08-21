@@ -11,7 +11,7 @@
         padding: 0;
         background-color: #f4f4f4;
         background-image: url('Code.jpg'); /* Path to your background image */
-        background-size: 100% 100%;
+        background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
@@ -20,6 +20,22 @@
         color: #ffffff;
         text-align: center;
         padding: 2em;
+    }
+    .navbar {
+        background-color: #35424a;
+        overflow: hidden;
+    }
+    .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    .navbar a:hover {
+        background-color: #ffce54;
+        color: black;
     }
     .container {
         max-width: 1200px;
@@ -53,14 +69,30 @@
     .project-description {
         margin-top: 1em;
     }
+    .about-me {
+        margin-top: auto; /* Push the section to the bottom */
+        padding: 1em;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+    }
+    .social-icons {
+        margin-top: 1em;
+        text-align: center;
+    }
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="index.html">Projects</a>
+        <a href="about.html">About Me</a>
+        <a href="contact.html">Contact</a>
+    </div>
     <header>
         <h1 style="font-size: 2.5em;">Robert Walton</h1>
         <p>Data Analyst Portfolio / <a href="https://github.com/RobWalton1" style="color: #ffce54;">GitHub</a></p>
     </header>
-    <div class="container">
+    <div class="container" id="projects">
         <div class="section-link">
             <a href="powerbi.html">
                 <h2>Dynamic Power BI Insights Dashboard</h2>
@@ -88,3 +120,4 @@
     </div>
 </body>
 </html>
+
