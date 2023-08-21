@@ -14,72 +14,75 @@
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        }
-        header {
-            background-color: #35424a;
-            color: #ffffff;
-            text-align: center;
-            padding: 1em;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2em;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 2em;
-        }
-        .section-link {
-            background-color: #ffffff;
-            border: 1px solid #dddddd;
-            border-radius: 5px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 1em;
-            text-align: center;
-            transition: transform 0.2s;
-        }
-        .section-link:hover {
-            transform: scale(1.05);
-        }
-        .section-link a {
-            text-decoration: none;
-            color: #333333;
-            font-weight: bold;
-        }
-        .section-link img {
-            max-width: 100%;
-            height: auto;
-        }
+    }
+    header {
+        background-color: #35424a;
+        color: #ffffff;
+        text-align: center;
+        padding: 2em;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2em;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2em;
+    }
+    .section-link {
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1em;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+    .section-link:hover {
+        transform: scale(1.05);
+    }
+    .section-link a {
+        text-decoration: none;
+        color: #333333;
+        font-weight: bold;
+    }
+    .section-link img {
+        max-width: 100%;
+        height: auto;
+    }
+    .project-description {
+        margin-top: 1em;
+    }
     </style>
 </head>
 <body>
     <header>
-        <h1>Robert Walton</h1>
-        <p>Data Analyst Portfolio / <a href="https://github.com/RobWalton1">GitHub</a></p>
+        <h1 style="font-size: 2.5em;">Robert Walton</h1>
+        <p>Data Analyst Portfolio / <a href="https://github.com/RobWalton1" style="color: #ffce54;">GitHub</a></p>
     </header>
     <div class="container">
         <div class="section-link">
             <a href="powerbi.html">
                 <h2>Dynamic Power BI Insights Dashboard</h2>
-                <p>Click here to view this project!</p>
+                <p class="project-description">Explore a dynamic dashboard created in Power BI to visualize complex data.</p>
             </a>
         </div>
         <div class="section-link">
             <a href="excel.html">
                 <h2>Excel Data Cleansing & Interactive Insights</h2>
-                <p>Click here to view this project!</p>
+                <p class="project-description">Utilize Excel for data cleansing and creating interactive insights.</p>
             </a>
         </div>
         <div class="section-link">
             <a href="python.html">
                 <h2>Python Chatbot project</h2>
-                <p>Click here to view this project!</p>
+                <p class="project-description">Develop a Python chatbot for streamlined customer interactions.</p>
             </a>
         </div>
         <div class="section-link">
             <a href="sql.html">
                 <h2>SQL + NodeJS Project</h2>
-                <p>Click here to view this project!</p>
+                <p class="project-description">Combine SQL and NodeJS to build a dynamic database-driven web application.</p>
             </a>
         </div>
     </div>
