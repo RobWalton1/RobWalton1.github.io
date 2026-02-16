@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Robert Walton</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Courier New', monospace;
+        background-color: #0a0e27;
+        color: #00ff88;
+        line-height: 1.6;
+    }
+    
+    header {
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+        border-bottom: 2px solid #00ff88;
+        padding: 2em 1em;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    }
+    
+    header h1 {
+        font-size: 2.5em;
+        text-shadow: 0 0 10px #00ff88;
+        margin-bottom: 0.5em;
+    }
+    
+    .navbar {
+        background-color: #0f1330;
+        border-bottom: 1px solid #00ff88;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .navbar a {
+        color: #00ff88;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        border-right: 1px solid #00ff88;
+        transition: all 0.3s;
+    }
+    
+    .navbar a:last-child {
+        border-right: none;
+    }
+    
+    .navbar a:hover {
+        background-color: #1a1f3a;
+        text-shadow: 0 0 10px #00ffff;
+        color: #00ffff;
+    }
+    
+    .container {
+        max-width: 700px;
+        margin: 2em auto;
+        padding: 2em;
+        background-color: #0f1330;
+        border: 2px solid #00ff88;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    }
+    
+    .container h2 {
+        color: #00ffff;
+        font-size: 2em;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    .contact-info {
+        margin: 2em 0;
+    }
+    
+    .contact-item {
+        padding: 1em;
+        margin: 1em 0;
+        border-left: 3px solid #00ffff;
+        background-color: #0a0e27;
+    }
+    
+    .contact-item strong {
+        color: #00ffff;
+        text-transform: uppercase;
+    }
+    
+    .contact-item a {
+        color: #00ff88;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    
+    .contact-item a:hover {
+        text-shadow: 0 0 10px #00ff88;
+    }
+    
+    .form-group {
+        margin: 1.5em 0;
+    }
+    
+    label {
+        display: block;
+        color: #00ffff;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    
+    input, textarea {
+        width: 100%;
+        padding: 0.8em;
+        background-color: #0a0e27;
+        border: 1px solid #00ff88;
+        color: #00ff88;
+        font-family: 'Courier New', monospace;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    
+    input:focus, textarea:focus {
+        outline: none;
+        border-color: #00ffff;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    
+    textarea {
+        resize: vertical;
+        min-height: 150px;
+    }
+    
+    button {
+        padding: 1em 2em;
+        background-color: #1a1f3a;
+        border: 1px solid #00ff88;
+        color: #00ff88;
+        cursor: pointer;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+    
+    button:hover {
+        background-color: #00ff88;
+        color: #0f1330;
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+    }
+    
+    .back-link {
+        display: inline-block;
+        margin-top: 2em;
+        padding: 1em 2em;
+        background-color: #1a1f3a;
+        border: 1px solid #00ff88;
+        color: #00ff88;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: all 0.3s;
+    }
+    
+    .back-link:hover {
+        background-color: #00ff88;
+        color: #0f1330;
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+    }
+    
+    footer {
+        background-color: #0f1330;
+        border-top: 2px solid #00ff88;
+        text-align: center;
+        padding: 2em;
+        margin-top: 3em;
+        color: #00ff88;
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">// PROJECTS</a>
+        <a href="about.html">// ABOUT ME</a>
+        <a href="contact.html">// CONTACT</a>
+    </div>
+    <header>
+        <h1>CONTACT</h1>
+        <p>Get in Touch - Let's Secure the Future Together</p>
+    </header>
+    <div class="container">
+        <h2>Reach Out</h2>
+        <p>Interested in discussing cybersecurity projects, collaboration opportunities, or security consulting? I'd love to hear from you.</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>GitHub:</strong> <a href="https://github.com/RobWalton1" target="_blank">RobWalton1</a>
+            </div>
+            <div class="contact-item">
+                <strong>Email:</strong> <a href="mailto:contact@example.com">contact@example.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/your-profile" target="_blank">Your LinkedIn Profile</a>
+            </div>
+        </div>
+        
+        <h3 style="color: #00ffff; text-transform: uppercase; margin: 2em 0 1em 0;">Send a Message</h3>
+        <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+        
+        <a href="index.html" class="back-link">« BACK TO PROJECTS</a>
+    </div>
+    <footer>
+        <p>// Stay Connected. Stay Secure.</p>
+    </footer>
+    
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

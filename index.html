@@ -3,121 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Walton - Data Analyst Portfolio</title>
+    <title>Robert Walton - Cybersecurity Portfolio</title>
     <style>
-    body {
-        font-family: Arial, sans-serif;
+    * {
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
-        background-image: url('Code.jpg'); /* Path to your background image */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        box-sizing: border-box;
     }
+    
+    body {
+        font-family: 'Courier New', monospace;
+        background-color: #0a0e27;
+        color: #00ff88;
+        line-height: 1.6;
+    }
+    
     header {
-        background-color: #35424a;
-        color: #ffffff;
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+        border-bottom: 2px solid #00ff88;
+        padding: 3em 1em;
         text-align: center;
-        padding: 2em;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
     }
-    .navbar {
-        background-color: #35424a;
-        overflow: hidden;
+    
+    header h1 {
+        font-size: 3em;
+        text-shadow: 0 0 10px #00ff88;
+        margin-bottom: 0.5em;
     }
-    .navbar a {
-        float: left;
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
+    
+    header p {
+        font-size: 1.2em;
+        color: #00ccff;
+    }
+    
+    header a {
+        color: #00ff88;
         text-decoration: none;
+        transition: all 0.3s;
     }
+    
+    header a:hover {
+        text-shadow: 0 0 10px #00ff88;
+    }
+    
+    .navbar {
+        background-color: #0f1330;
+        border-bottom: 1px solid #00ff88;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .navbar a {
+        color: #00ff88;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        border-right: 1px solid #00ff88;
+        transition: all 0.3s;
+    }
+    
+    .navbar a:last-child {
+        border-right: none;
+    }
+    
     .navbar a:hover {
-        background-color: #ffce54;
-        color: black;
+        background-color: #1a1f3a;
+        text-shadow: 0 0 10px #00ffff;
+        color: #00ffff;
     }
+    
     .container {
         max-width: 1200px;
-        margin: 0 auto;
-        padding: 2em;
+        margin: 3em auto;
+        padding: 0 2em;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 2em;
     }
-    .section-link {
-        background-color: #ffffff;
-        border: 1px solid #dddddd;
+    
+    .project-card {
+        background-color: #0f1330;
+        border: 2px solid #00ff88;
         border-radius: 5px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 1em;
+        padding: 2em;
         text-align: center;
-        transition: transform 0.2s;
+        transition: all 0.3s;
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+        position: relative;
     }
-    .section-link:hover {
-        transform: scale(1.05);
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        border-color: #00ffff;
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
     }
-    .section-link a {
-        text-decoration: none;
-        color: #333333;
+    
+    .project-card::before {
+        content: '[ ]';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #00ffff;
         font-weight: bold;
     }
-    .section-link img {
-        max-width: 100%;
-        height: auto;
+    
+    .project-card::after {
+        content: '[ ]';
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        color: #00ffff;
+        font-weight: bold;
     }
+    
+    .project-card a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .project-card h2 {
+        font-size: 1.8em;
+        margin-bottom: 1em;
+        color: #00ffff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
     .project-description {
-        margin-top: 1em;
+        font-size: 1.1em;
+        color: #00ff88;
+        margin-bottom: 1.5em;
     }
-    .about-me {
-        margin-top: auto; /* Push the section to the bottom */
-        padding: 1em;
-        background-color: #ffffff;
-        border: 1px solid #dddddd;
-        border-radius: 5px;
-    }
-    .social-icons {
+    
+    .status-badge {
+        display: inline-block;
+        background-color: #1a1f3a;
+        border: 1px solid #00ff88;
+        color: #00ff88;
+        padding: 0.5em 1em;
         margin-top: 1em;
+        border-radius: 3px;
+        font-size: 0.9em;
+    }
+    
+    footer {
+        background-color: #0f1330;
+        border-top: 2px solid #00ff88;
         text-align: center;
+        padding: 2em;
+        margin-top: 3em;
+        color: #00ff88;
     }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html">Projects</a>
-        <a href="about.html">About Me</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html">// PROJECTS</a>
+        <a href="about.html">// ABOUT ME</a>
+        <a href="contact.html">// CONTACT</a>
     </div>
     <header>
-        <h1 style="font-size: 2.5em;">Robert Walton</h1>
-        <p>Data Analyst Portfolio / <a href="https://github.com/RobWalton1" style="color: #ffce54;">GitHub</a></p>
+        <h1>ROBERT WALTON</h1>
+        <p>Cybersecurity & Network Security Portfolio / <a href="https://github.com/RobWalton1">GitHub</a></p>
     </header>
     <div class="container" id="projects">
-        <div class="section-link">
-            <a href="powerbi.html">
-                <h2>Dynamic Power BI Insights Dashboard</h2>
-                <p class="project-description">Explore a dynamic dashboard created in Power BI to visualize complex data.</p>
+        <div class="project-card">
+            <a href="secure-app.html">
+                <h2>Secure App</h2>
+                <p class="project-description">Advanced application security implementation with encryption, authentication, and authorization protocols.</p>
+                <span class="status-badge">IN DEVELOPMENT</span>
             </a>
         </div>
-        <div class="section-link">
-            <a href="excel.html">
-                <h2>Excel Data Cleansing & Interactive Insights</h2>
-                <p class="project-description">Utilize Excel for data cleansing and creating interactive insights.</p>
-            </a>
-        </div>
-        <div class="section-link">
-            <a href="python.html">
-                <h2>Python Chatbot project</h2>
-                <p class="project-description">Develop a Python chatbot for streamlined customer interactions.</p>
-            </a>
-        </div>
-        <div class="section-link">
-            <a href="sql.html">
-                <h2>SQL + NodeJS Project</h2>
-                <p class="project-description">Combine SQL and NodeJS to build a dynamic database-driven web application.</p>
+        <div class="project-card">
+            <a href="homelab.html">
+                <h2>HomeLab</h2>
+                <p class="project-description">Comprehensive home networking lab demonstrating network security, virtualization, and penetration testing frameworks.</p>
+                <span class="status-badge">IN DEVELOPMENT</span>
             </a>
         </div>
     </div>
+    <footer>
+        <p>// CYBERSECURITY PORTFOLIO | Stay vigilant, stay secure.</p>
+    </footer>
 </body>
 </html>
 
