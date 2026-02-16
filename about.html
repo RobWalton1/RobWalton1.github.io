@@ -12,11 +12,189 @@
     }
     
     body {
-        font-family: 'Courier New', monospace;
-        background-color: #0a0e27;
-        color: #00ff88;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
         line-height: 1.6;
     }
+    
+    header {
+        background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+        border-bottom: 1px solid #e1e8ed;
+        padding: 2em 1em;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    header h1 {
+        font-size: 2.5em;
+        color: #1a1a1a;
+        margin-bottom: 0.5em;
+        font-weight: 700;
+    }
+    
+    .navbar {
+        background-color: #ffffff;
+        border-bottom: 1px solid #e1e8ed;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .navbar a {
+        color: #333;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        border-right: 1px solid #e1e8ed;
+        transition: all 0.3s;
+        font-weight: 500;
+    }
+    
+    .navbar a:last-child {
+        border-right: none;
+    }
+    
+    .navbar a:hover {
+        background-color: #f0f4f8;
+        color: #0066cc;
+    }
+    
+    .container {
+        max-width: 900px;
+        margin: 2em auto;
+        padding: 2em;
+        background-color: #ffffff;
+        border: 1px solid #e1e8ed;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .container h2 {
+        color: #0066cc;
+        font-size: 2em;
+        margin-bottom: 1em;
+        font-weight: 700;
+    }
+    
+    .container p {
+        margin-bottom: 1em;
+        font-size: 1.1em;
+    }
+    
+    .section {
+        margin: 2em 0;
+        padding: 1em;
+        border-left: 3px solid #0066cc;
+        background-color: #f8f9fa;
+    }
+    
+    .section h3 {
+        color: #0066cc;
+        margin-bottom: 0.5em;
+        font-weight: 600;
+    }
+    
+    .skills-list {
+        list-style: none;
+        margin: 1em 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+    
+    .skills-list li {
+        padding: 0.5em;
+        border: 1px solid #e1e8ed;
+        background-color: #ffffff;
+    }
+    
+    .skills-list li:before {
+        content: '✓ ';
+        color: #0066cc;
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+    
+    .back-link {
+        display: inline-block;
+        margin-top: 2em;
+        padding: 1em 2em;
+        background-color: #0066cc;
+        border: 1px solid #0066cc;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s;
+        font-weight: 500;
+    }
+    
+    .back-link:hover {
+        background-color: #0052a3;
+        box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+    }
+    
+    footer {
+        background-color: #ffffff;
+        border-top: 1px solid #e1e8ed;
+        text-align: center;
+        padding: 2em;
+        margin-top: 3em;
+        color: #666;
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Projects</a>
+        <a href="about.html">About Me</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <header>
+        <h1>About Me</h1>
+        <p>Software Developer & Security Engineer</p>
+    </header>
+    <div class="container">
+        <h2>Who I Am</h2>
+        <p>I'm a passionate software developer and security engineer dedicated to building robust applications and protecting critical systems. With a focus on secure development practices, I'm committed to staying current with industry trends and implementing best practices in software engineering.</p>
+        
+        <div class="section">
+            <h3>Core Competencies</h3>
+            <ul class="skills-list">
+                <li>Full Stack Development</li>
+                <li>Application Security</li>
+                <li>API Development</li>
+                <li>Database Design</li>
+                <li>System Architecture</li>
+                <li>DevOps & Deployment</li>
+                <li>Code Quality & Testing</li>
+                <li>Project Management</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>Technical Skills</h3>
+            <p>
+                <strong>Languages:</strong> Python, JavaScript, C#, Java<br>
+                <strong>Frameworks:</strong> React, Node.js, .NET, Django<br>
+                <strong>Databases:</strong> PostgreSQL, MySQL, MongoDB<br>
+                <strong>Cloud Platforms:</strong> AWS, Azure
+            </p>
+        </div>
+        
+        <div class="section">
+            <h3>Mission</h3>
+            <p>To design and develop high-quality software solutions that are secure, scalable, and user-focused. I believe in continuous learning, clean code practices, and collaborating with talented teams to create impactful applications.</p>
+        </div>
+        
+        <a href="index.html" class="back-link">← Back to Projects</a>
+    </div>
+    <footer>
+        <p>&copy; 2026 Robert Walton. All rights reserved.</p>
+    </footer>
+</body>
+</html>
     
     header {
         background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
