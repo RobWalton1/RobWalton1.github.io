@@ -1,9 +1,9 @@
 :root {
   --ink: #172033;
   --muted: #5c667a;
-  --line: #dfe5ee;
-  --surface: #ffffff;
-  --canvas: #f7f9fc;
+  --line: #cbd0d8;
+  --surface: #f1f3f5;
+  --canvas: #dfe3e8;
   --accent: #087ea4;
   --accent-dark: #05627f;
   --azure: #0078d4;
@@ -47,6 +47,6 @@ h2 { margin-bottom: 0; font-size: 1.6rem; letter-spacing: -.035em; }
 .details dd { margin: 4px 0 0; font-weight: 650; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
 .tags li { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .88rem; }
-.note { padding: 16px 18px; border-left: 3px solid var(--azure); background: #f0f7fd; color: #30465e !important; }
+.note { padding: 16px 18px; border-left: 3px solid var(--azure); background: #e5edf4; color: #30465e !important; }
 footer { max-width: 1100px; margin: auto; padding: 28px 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
 @media (max-width: 720px) { .site-header { min-height: 64px; padding: 0 18px; } .site-nav { gap: 14px; } .hero, .page-intro { padding: 60px 18px 42px; } .content { padding: 0 18px 52px; } .project-grid, .case-study { grid-template-columns: 1fr; } .case-study { gap: 28px; } .details { grid-row: 1; } }
