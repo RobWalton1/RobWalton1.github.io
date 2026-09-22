@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Azure ETL Pipeline by Robert Walton.">
-  <title>Azure ETL Pipeline — Robert Walton</title>
+  <meta name="description" content="Azure Cloud Data Pipeline by Robert Walton, built with Python, Docker, Terraform and GitHub Actions.">
+  <title>Azure Cloud Data Pipeline — Robert Walton</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,28 +18,54 @@
   </header>
   <main>
     <section class="page-intro">
-      <p class="eyebrow">Data engineering · Azure ETL pipeline</p>
-      <h1>Azure ETL Pipeline</h1>
-      <p class="lead">A documented Azure workflow for extracting, transforming and loading data reliably in the cloud.</p>
+      <p class="eyebrow">Cloud engineering · DevOps · Data pipeline</p>
+      <h1>Azure Cloud Data Pipeline</h1>
+      <p class="lead">A production-style cloud data pipeline built to demonstrate modern Azure, DevOps and infrastructure engineering practices.</p>
     </section>
     <section class="content case-study">
       <div>
-        <h2>Project focus</h2>
-        <p>This project applies Azure data-engineering concepts in a deliberate, practical way: moving data from source to destination, transforming it into a usable form, and documenting the decisions behind each stage. The focus is on a reliable, repeatable ETL workflow rather than simply provisioning Azure services.</p>
-        <h2>What I’m working on</h2>
-        <ul class="tags" aria-label="Project areas">
-          <li>Data extraction</li><li>Data transformation</li><li>Data loading</li><li>Pipeline orchestration</li><li>Monitoring and logging</li><li>Pipeline documentation</li>
+        <h2>Overview</h2>
+        <p>I designed and built a production-style cloud data pipeline to demonstrate modern cloud, DevOps and infrastructure engineering practices using Microsoft Azure.</p>
+        <p>The application uses Python to retrieve data from a public REST API, transform it and store the resulting output in Azure Blob Storage. It is packaged as a Docker container, stored in Azure Container Registry and executed by an Azure Container Apps Job.</p>
+        <h2>Infrastructure &amp; deployment</h2>
+        <p>The Azure infrastructure is provisioned with Terraform and separated into reusable modules for storage, container registry, Container Apps, container jobs and Log Analytics. Terraform state is stored remotely in Azure Storage for reliable infrastructure management.</p>
+        <p>A GitHub Actions CI/CD pipeline automates deployments. Changes pushed to GitHub build a Docker image, push it to Azure Container Registry with a commit-based version tag, then update the Azure Container Apps Job to run that image.</p>
+        <h2>Monitoring &amp; troubleshooting</h2>
+        <p>Centralised monitoring and logging are provided through Azure Log Analytics. I use KQL to query container execution logs and troubleshoot deployments.</p>
+        <h2>Key technologies</h2>
+        <ul class="tags" aria-label="Key technologies">
+          <li>Python</li><li>Docker</li><li>Microsoft Azure</li><li>Terraform</li><li>GitHub Actions</li><li>Azure Container Registry</li><li>Azure Container Apps</li><li>Azure Blob Storage</li><li>Azure Log Analytics</li><li>KQL</li><li>Git</li><li>Linux</li>
         </ul>
-        <h2>Approach</h2>
-        <p>Each stage is treated as a small, explainable implementation: define the data requirement, choose the Azure service and transformation, validate the output, then document the result. This keeps the pipeline understandable and provides a foundation for future data projects.</p>
-        <p class="note"><strong>Status:</strong> In development. This page will grow with architecture notes, implementation evidence and lessons learned as the pipeline evolves.</p>
+        <h2>Engineering practices demonstrated</h2>
+        <ul class="practice-list">
+          <li>Infrastructure as Code using modular Terraform</li>
+          <li>Remote Terraform state management</li>
+          <li>Containerisation with Docker</li>
+          <li>Automated CI/CD with GitHub Actions</li>
+          <li>Versioned container deployments using Git commit SHA tags</li>
+          <li>Cloud secrets and environment configuration</li>
+          <li>Centralised logging and monitoring</li>
+          <li>KQL-based troubleshooting</li>
+          <li>Azure CLI and infrastructure troubleshooting</li>
+          <li>Separation of application and infrastructure concerns</li>
+        </ul>
+        <h2>Architecture</h2>
+        <div class="architecture" aria-label="Data flow: Public REST API, Python transformation, Docker, Azure Container Registry, Azure Container Apps Job, then Azure Blob Storage. Deployment flow: GitHub, GitHub Actions, Docker build, Azure Container Registry, then Azure Container Apps.">
+          <div class="architecture-flow">
+            <span>Public REST API</span><b aria-hidden="true">↓</b><span>Python</span><b aria-hidden="true">↓</b><span>Transform</span><b aria-hidden="true">↓</b><span>Docker</span><b aria-hidden="true">↓</b><span>Azure Container Registry</span><b aria-hidden="true">↓</b><span>Azure Container Apps Job</span><b aria-hidden="true">↓</b><span>Azure Blob Storage</span>
+          </div>
+          <div class="architecture-flow architecture-flow--deployment">
+            <span>GitHub</span><b aria-hidden="true">↓</b><span>GitHub Actions</span><b aria-hidden="true">↓</b><span>Docker Build → Azure Container Registry → Container Apps</span>
+          </div>
+        </div>
       </div>
       <aside>
         <dl class="details">
           <div><dt>Platform</dt><dd>Microsoft Azure</dd></div>
-          <div><dt>Focus</dt><dd>Extract, transform & load</dd></div>
-          <div><dt>Status</dt><dd>In development</dd></div>
-          <div><dt>Related skills</dt><dd>Data engineering, cloud, documentation</dd></div>
+          <div><dt>Workload</dt><dd>Container Apps Job</dd></div>
+          <div><dt>Delivery</dt><dd>GitHub Actions CI/CD</dd></div>
+          <div><dt>Infrastructure</dt><dd>Terraform</dd></div>
+          <div><dt>Observability</dt><dd>Log Analytics &amp; KQL</dd></div>
         </dl>
       </aside>
     </section>
