@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Azure Cloud Data Pipeline by Robert Walton, built with Python, Docker, Terraform and GitHub Actions.">
+  <meta name="description" content="Azure Cloud Data Pipeline by Robert Walton, built with Python, Docker, Terraform and GitHub Actions, secured with managed identity and least-privilege RBAC.">
   <title>Azure Cloud Data Pipeline — Robert Walton</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,7 +20,7 @@
     <section class="page-intro">
       <p class="eyebrow">Cloud engineering · DevOps · Data pipeline</p>
       <h1>Azure Cloud Data Pipeline</h1>
-      <p class="lead">A production-style cloud data pipeline built to demonstrate modern Azure, DevOps and infrastructure engineering practices.</p>
+      <p class="lead">A production-style cloud data pipeline built to demonstrate modern Azure, DevOps and infrastructure engineering practices, with secretless runtime authentication and least-privilege access.</p>
     </section>
     <section class="content case-study">
       <div>
@@ -28,13 +28,28 @@
         <p>I designed and built a production-style cloud data pipeline to demonstrate modern cloud, DevOps and infrastructure engineering practices using Microsoft Azure.</p>
         <p>The application uses Python to retrieve data from a public REST API, transform it and store the resulting output in Azure Blob Storage. It is packaged as a Docker container, stored in Azure Container Registry and executed by an Azure Container Apps Job.</p>
         <h2>Infrastructure &amp; deployment</h2>
-        <p>The Azure infrastructure is provisioned with Terraform and separated into reusable modules for storage, container registry, Container Apps, container jobs and Log Analytics. Terraform state is stored remotely in Azure Storage for reliable infrastructure management.</p>
+        <p>The Azure infrastructure is provisioned with Terraform and separated into reusable modules for storage, container registry, Container Apps, container jobs, managed identity and Log Analytics. Terraform state is stored remotely in Azure Storage for reliable infrastructure management.</p>
         <p>A GitHub Actions CI/CD pipeline automates deployments. Changes pushed to GitHub build a Docker image, push it to Azure Container Registry with a commit-based version tag, then update the Azure Container Apps Job to run that image.</p>
+        <h2>Security &amp; least-privilege access</h2>
+        <p>The running pipeline holds no secrets. I replaced the storage connection string and the ACR admin credentials, which were long-lived and unscoped, with Azure AD identities. Every role assignment is defined in Terraform and scoped to the individual resource rather than the subscription or resource group.</p>
+        <div class="table-wrap">
+          <table class="access-table">
+            <thead><tr><th scope="col">Actor</th><th scope="col">Identity</th><th scope="col">Roles &amp; scope</th></tr></thead>
+            <tbody>
+              <tr><td>Container Apps Job</td><td>User-assigned managed identity</td><td><code>AcrPull</code> on the registry, <code>Storage Blob Data Contributor</code> on the storage account</td></tr>
+              <tr><td>GitHub Actions</td><td>Service principal</td><td><code>AcrPush</code> on the registry, <code>Contributor</code> on the job only, <code>Managed Identity Operator</code> on the job's identity</td></tr>
+              <tr><td>Local development</td><td>Developer's Azure CLI login</td><td><code>Storage Blob Data Contributor</code>, granted explicitly</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The ACR admin account is disabled and no storage account key is distributed. The Python application authenticates with <code>DefaultAzureCredential</code>, so the same code uses the managed identity in Azure and my CLI login locally.</p>
+        <p>I chose a user-assigned identity over a system-assigned one because the job pulls its image when it is created. A system-assigned identity would not exist until the job did, so it could not be granted <code>AcrPull</code> in advance.</p>
+        <p class="note">Next step: replace the CI service principal's client secret with GitHub OIDC workload identity federation, removing the last stored credential.</p>
         <h2>Monitoring &amp; troubleshooting</h2>
         <p>Centralised monitoring and logging are provided through Azure Log Analytics. I use KQL to query container execution logs and troubleshoot deployments.</p>
         <h2>Key technologies</h2>
         <ul class="tags" aria-label="Key technologies">
-          <li>Python</li><li>Docker</li><li>Microsoft Azure</li><li>Terraform</li><li>GitHub Actions</li><li>Azure Container Registry</li><li>Azure Container Apps</li><li>Azure Blob Storage</li><li>Azure Log Analytics</li><li>KQL</li><li>Git</li><li>Linux</li>
+          <li>Python</li><li>Docker</li><li>Microsoft Azure</li><li>Terraform</li><li>GitHub Actions</li><li>Azure Container Registry</li><li>Azure Container Apps</li><li>Azure Blob Storage</li><li>Azure Log Analytics</li><li>Managed Identity</li><li>Azure RBAC</li><li>KQL</li><li>Git</li><li>Linux</li>
         </ul>
         <h2>Engineering practices demonstrated</h2>
         <ul class="practice-list">
@@ -43,7 +58,8 @@
           <li>Containerisation with Docker</li>
           <li>Automated CI/CD with GitHub Actions</li>
           <li>Versioned container deployments using Git commit SHA tags</li>
-          <li>Cloud secrets and environment configuration</li>
+          <li>Secretless authentication with managed identity</li>
+          <li>Least-privilege Azure RBAC, scoped per resource and managed in Terraform</li>
           <li>Centralised logging and monitoring</li>
           <li>KQL-based troubleshooting</li>
           <li>Azure CLI and infrastructure troubleshooting</li>
@@ -65,6 +81,7 @@
           <div><dt>Workload</dt><dd>Container Apps Job</dd></div>
           <div><dt>Delivery</dt><dd>GitHub Actions CI/CD</dd></div>
           <div><dt>Infrastructure</dt><dd>Terraform</dd></div>
+          <div><dt>Security</dt><dd>Managed identity &amp; least-privilege RBAC</dd></div>
           <div><dt>Observability</dt><dd>Log Analytics &amp; KQL</dd></div>
         </dl>
       </aside>
